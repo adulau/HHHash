@@ -1,6 +1,6 @@
 # HTTP Headers Hashing (HHHash)
 
-HTTP Headers Hashing (HHHash) is a technique used to create a fingerprint of an HTTP server based on the headers it returns. HHHash employs one-way hashing to generate a hash value for the set of header keys returned by the server
+HTTP Headers Hashing (HHHash) is a technique used to create a fingerprint of an HTTP server based on the headers it returns. HHHash employs one-way hashing to generate a hash value for the set of header keys returned by the server.
 
 ## Calculation of the HHHash
 
@@ -26,6 +26,10 @@ Output value
 ~~~
 hhh:1:78f7ef0651bac1a5ea42ed9d22242ed8725f07815091032a34ab4e30d3c3cefc
 ~~~
+
+## Limitations 
+
+HHHash is an effective technique; however, its performance is heavily reliant on the characteristics of the HTTP client requests. Therefore, it is important to note that correlations between a set of hashes are typically established when using the same crawler or HTTP client parameters.
 
 ### hhhash - Python Library
 
