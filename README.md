@@ -19,10 +19,10 @@ The HHHash value is the SHA256 of the list.
 ### Calculating HHHash from a curl command
 
 ~~~
-$ curl -s -D - https://www.circl.lu/ -o /dev/null  | awk 'NR != 1' | cut -f1 -d: | sed '/^[[:space:]]*$/d' | sed -z 's/\n/:/g' | sha256sum | cut -f1 -d " " | awk {'print "hhh:1:"$1'}
+$ curl -s -D - https://www.circl.lu/ -o /dev/null  | awk 'NR != 1' | cut -f1 -d: | sed '/^[[:space:]]*$/d' | sed -z 's/\n/:/g' | sed 's/.$//' | sha256sum | cut -f1 -d " " | awk {'print "hhh:1:"$1'}
 ~~~
 
 Output value
 ~~~
-hhh:1:79dde6169456e7e2886eb1668b3c27e8438f1a7219fc5fbb13d9c8eec07c5983
+hhh:1:78f7ef0651bac1a5ea42ed9d22242ed8725f07815091032a34ab4e30d3c3cefc
 ~~~
