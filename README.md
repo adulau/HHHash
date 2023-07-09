@@ -27,7 +27,11 @@ Output value
 hhh:1:78f7ef0651bac1a5ea42ed9d22242ed8725f07815091032a34ab4e30d3c3cefc
 ~~~
 
-### Python Library
+### hhhash - Python Library
+
+The [hhhash package](https://pypi.org/project/hhhash/) can be installed via a `pip install hhhash` or build with Poetry from this repository `poetry build` and `poetry install`.
+
+#### Usage
 
 ~~~ipython
 In [1]: import hhhash
