@@ -1,0 +1,25 @@
+#[build-system]
+#requires = ["setuptools>=61.0"]
+#build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "HHHash"
+version = "0.1"
+authors = [
+    "Alexandre Dulaunoy <a@foo.be>"
+]
+description = "HHHash library is calculate HHHash from HTTP servers."
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+homepage = "https://github.com/adulau/HHHash"
+repository = "https://github.com/adulau/HHHash/issues"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.20.0"
+
