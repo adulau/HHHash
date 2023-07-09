@@ -26,3 +26,20 @@ Output value
 ~~~
 hhh:1:78f7ef0651bac1a5ea42ed9d22242ed8725f07815091032a34ab4e30d3c3cefc
 ~~~
+
+### Python Library
+
+~~~ipython
+In [1]: import hhhash
+
+In [2]: hhhash.buildhash(url="https://www.misp-lea.org", debug=False)
+Out[2]: 'hhh:1:adca8a87f2a537dbbf07ba6d8cba6db53fde257ae2da4dad6f3ee6b47080c53f'
+
+In [3]: hhhash.buildhash(url="https://www.misp-project.org", debug=False)
+Out[3]: 'hhh:1:adca8a87f2a537dbbf07ba6d8cba6db53fde257ae2da4dad6f3ee6b47080c53f'
+
+In [4]: hhhash.buildhash(url="https://www.circl.lu", debug=False)
+Out[4]: 'hhh:1:334d8ab68f9e935f3af7c4a91220612f980f2d9168324530c03d28c9429e1299'
+
+In [5]:
+~~~
