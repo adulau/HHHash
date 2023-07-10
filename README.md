@@ -53,3 +53,9 @@ Out[4]: 'hhh:1:334d8ab68f9e935f3af7c4a91220612f980f2d9168324530c03d28c9429e1299'
 
 In [5]:
 ~~~
+
+## Other libraries
+
+- [c-hhhash](https://github.com/hrbrmstr/c-hhhash) - C++ HTTP Headers Hashing CLI
+- [go-hhhash](https://github.com/hrbrmstr/go-hhhash) - golang HTTP Headers Hashing CLI
+- [R hhhash](https://github.com/hrbrmstr/hhhash) - R library HHHash
