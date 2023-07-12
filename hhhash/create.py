@@ -5,7 +5,7 @@ import hashlib
 def buildhash(url=None, debug=False):
     if url is None:
         return False
-    r = requests.get(url)
+    r = requests.head(url)
     hhhash = ""
     for header in r.headers.keys():
         hhhash = f"{hhhash}:{header}"
