@@ -1,1 +1,1 @@
-from hhhash.create import buildhash
+from hhhash.create import buildhash, hash_from_banner
