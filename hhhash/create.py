@@ -30,7 +30,11 @@ def buildhash(url=None, debug=False, method='GET', timeout=5):
     return f"hhh:1:{digest}"
 
 def hash_from_banner(banner, debug=False):
-    """This allows the creation of hhhash without a request, if the banner string is already available
+    """Create a HHHash from an already fetched banner. Lines without colons will be skipped. 
+
+    Keyword arguments:
+    banner -- HTTP banner string
+    debug -- output the headers returned before hashing
     
     Example:
         >>> hash_from_banner('''HTTP/1.1 200 OK
@@ -52,12 +56,11 @@ def hash_from_banner(banner, debug=False):
     """
     hhhash = ""
     for line in banner.splitlines():
-        if line[:4] == "HTTP":
+        if ":" not in line:
             continue
-        key = line
-        if ":" in key:
-            key, _ = line.split(":", maxsplit=1)
-        hhhash = f"{hhhash}:{key.strip()}"
+
+        header, _ = line.split(":", maxsplit=1)
+        hhhash = f"{hhhash}:{header.strip()}"
     if debug:
         print(hhhash[1:])
     m = hashlib.sha256()
