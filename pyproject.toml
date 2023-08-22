@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "HHHash"
-version = "0.3"
+version = "0.4"
 authors = [
     "Alexandre Dulaunoy <a@foo.be>"
 ]
