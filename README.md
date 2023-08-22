@@ -20,8 +20,10 @@ The HHHash value is the SHA256 of the list.
 
 ### Calculating HHHash from a curl command
 
-~~~
-$ curl -s -D - https://www.circl.lu/ -o /dev/null  | awk 'NR != 1' | cut -f1 -d: | sed '/^[[:space:]]*$/d' | sed -z 's/\n/:/g' | sed 's/.$//' | sha256sum | cut -f1 -d " " | awk {'print "hhh:1:"$1'}
+Curl will attempt to run the request using HTTP2 by default. In order to get the same hash as the python requests module (which doesn't supports HTTP2), you need to specify the version with the `--http1.1` switch.
+
+~~~bash
+curl --http1.1 -s -D - https://www.circl.lu/ -o /dev/null  | awk 'NR != 1' | cut -f1 -d: | sed '/^[[:space:]]*$/d' | sed -z 's/\n/:/g' | sed 's/.$//' | sha256sum | cut -f1 -d " " | awk {'print "hhh:1:"$1'}
 ~~~
 
 Output value
@@ -32,6 +34,8 @@ hhh:1:78f7ef0651bac1a5ea42ed9d22242ed8725f07815091032a34ab4e30d3c3cefc
 ## Limitations 
 
 HHHash is an effective technique; however, its performance is heavily reliant on the characteristics of the HTTP client requests. Therefore, it is important to note that correlations between a set of hashes are typically established when using the same crawler or HTTP client parameters.
+
+HTTP2 requires the [headers to be lowercase](https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2). It will then changes the hash so you need to be aware of the HTTP version you're using.
 
 ### hhhash - Python Library
 
