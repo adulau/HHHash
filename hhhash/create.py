@@ -16,9 +16,9 @@ def buildhash(url=None, debug=False, method='GET', timeout=5):
     if url is None:
         return False
     if method == 'GET':
-        r = requests.get(url, timeout=timeout)
+        r = requests.get(url, timeout=timeout, allow_redirects=False)
     elif method == 'HEAD':
-        r = requests.head(url, timeout=timeout)
+        r = requests.head(url, timeout=timeout, allow_redirects=False)
     else:
         return False
     hhhash = ""
